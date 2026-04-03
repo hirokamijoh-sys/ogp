@@ -1,11 +1,46 @@
-<div align="center">
+# OGP画像つくるくん
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+SNSやブログに最適な1200x630のOGP画像を数秒で作成できる無料ツールです。
 
-  <h1>Built with AI Studio</h2>
+## 特徴
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **かんたん操作**: テキストを入力してレイアウトを選ぶだけ。
+- **高品質な背景**: Unsplashの高品質なパブリックドメイン画像をランダムに取得。
+- **プライバシー重視**: 画像の処理はすべてブラウザ内で行われ、サーバーに保存されることはありません。
+- **商用利用OK**: 提供される背景画像は商用利用可能なライセンスです。
+- **自由なカスタマイズ**: レイアウト（左・中央・右）、文字色、オーバーレイ（黒・白・不透明度）を自由に調整可能。
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 使い方
 
-</div>
+1. メインコピーとサブコピーを入力します。
+2. レイアウトを選択します。
+3. 背景画像を「おまかせ」で選ぶか、自分の画像をアップロードします。
+4. 文字色やオーバーレイを調整して、納得のいくデザインにします。
+5. 「JPEGで保存する」ボタンを押してダウンロード！
+
+## 開発者向け
+
+このプロジェクトは React + Vite + Tailwind CSS で構築されています。
+
+### セットアップ
+
+```bash
+npm install
+```
+
+### 開発サーバーの起動
+
+```bash
+npm run dev
+```
+
+### ビルド
+
+```bash
+npm run build
+```
+
+## ライセンス
+
+このプロジェクト自体は MIT ライセンスです。
+背景画像は [Unsplash License](https://unsplash.com/license) に基づいています。
