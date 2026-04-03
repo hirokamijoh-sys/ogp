@@ -38,6 +38,8 @@ export default function App() {
   const [overlayOpacity, setOverlayOpacity] = useState(0.4);
   const [overlayColor, setOverlayColor] = useState<'black' | 'white'>('black');
   const [textColor, setTextColor] = useState('#ffffff');
+  const [mainFontSize, setMainFontSize] = useState(80);
+  const [subFontSize, setSubFontSize] = useState(32);
   const [isExporting, setIsExporting] = useState(false);
   const [previewScale, setPreviewScale] = useState(1);
   const [copied, setCopied] = useState(false);
@@ -233,8 +235,8 @@ export default function App() {
                     key={mainCopy + layout}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-7xl font-black leading-tight mb-6 drop-shadow-2xl whitespace-pre-wrap"
-                    style={{ color: textColor }}
+                    className="font-black leading-[1.1] mb-6 drop-shadow-2xl whitespace-pre-wrap"
+                    style={{ color: textColor, fontSize: `${mainFontSize}px` }}
                   >
                     {mainCopy}
                   </motion.h3>
@@ -243,8 +245,8 @@ export default function App() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-3xl font-bold opacity-90 drop-shadow-xl"
-                    style={{ color: textColor }}
+                    className="font-bold opacity-90 drop-shadow-xl"
+                    style={{ color: textColor, fontSize: `${subFontSize}px` }}
                   >
                     {subCopy}
                   </motion.p>
@@ -320,6 +322,39 @@ export default function App() {
                     className="w-full p-4 bg-zinc-50 border border-zinc-200 rounded-2xl text-sm font-medium focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
                     placeholder="サブコピーを入力..."
                   />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wider">メイン文字サイズ</label>
+                      <span className="text-[10px] font-bold text-brand bg-brand/10 px-2 py-0.5 rounded-full">{mainFontSize}px</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="40"
+                      max="160"
+                      step="1"
+                      value={mainFontSize}
+                      onChange={(e) => setMainFontSize(parseInt(e.target.value))}
+                      className="w-full h-1.5 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-brand"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-[11px] font-black text-zinc-500 uppercase tracking-wider">サブ文字サイズ</label>
+                      <span className="text-[10px] font-bold text-brand bg-brand/10 px-2 py-0.5 rounded-full">{subFontSize}px</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="16"
+                      max="80"
+                      step="1"
+                      value={subFontSize}
+                      onChange={(e) => setSubFontSize(parseInt(e.target.value))}
+                      className="w-full h-1.5 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-brand"
+                    />
+                  </div>
                 </div>
                 <div>
                   <label className="text-[11px] font-black text-zinc-500 mb-2 block uppercase tracking-wider">文字色</label>
