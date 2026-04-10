@@ -478,7 +478,7 @@ export default function App() {
           {/* Footer */}
           <footer className="mt-12 pt-6 border-t border-zinc-100 text-center">
             <p className="text-[10px] font-bold text-zinc-400 tracking-widest uppercase">
-              &copy; 2026 OGP画像つくるくん
+              &copy; 2026 かみじょーひろ
             </p>
           </footer>
         </aside>
